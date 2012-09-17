@@ -31,6 +31,17 @@ class PacManPanel extends JPanel implements Runnable, KeyListener{
 		g2.setColor(Color.BLACK);
 		g2.fillRect(0,0,height,width);
 		
+		for(int y=0; y<pacMaze.getMaze().length; y++){
+			for(int x=0; x < pacMaze.getMaze()[y].length; x++){
+				if(pacMaze.getMaze()[x][y] == 1){
+					g2.setColor(Color.BLUE);
+					g2.drawRect(x*20,y*20,20,20);
+				}
+			}
+		}
+
+		
+		
 		g2.setColor(Color.YELLOW);
 		g2.fillRect(pacMan.getPacManX(), pacMan.getPacManY(),20,20);
 		g2.dispose();

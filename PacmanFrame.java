@@ -6,11 +6,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.*;
 
-class PacmanFrame{
+class PacManFrame{
 	
-	public PacmanFrame(){
+	public PacManFrame(){
 		JFrame frame = new JFrame();
-		PacmanPanel pacPanel = new PacmanPanel();
+		PacManPanel pacPanel = new PacManPanel();
 		Maze mazePanel = new Maze();
 		frame.add(pacPanel);
 		frame.pack();
@@ -20,6 +20,6 @@ class PacmanFrame{
 	}
 	
 	public static void main(String [] args){
-		new PacmanFrame();
+		new PacManFrame();
 	}
 }
