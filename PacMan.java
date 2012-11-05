@@ -1,22 +1,22 @@
 class PacMan {
 
-	private static int pacManX, pacManY = 0;
+	private static int thisX, thisY = 0;
 	private static boolean up, down, left, right = false;
 
 	public int getPacManX(){
-		return pacManX;
+		return thisX;
 	}
 
 	public int getPacManY(){
-		return pacManY;
+		return thisY;
 	}
 
 	public void setPacManX(int myPacManX){
-		this.pacManX = myPacManX;
+		this.thisX = myPacManX;
 	}
 
 	public void setPacManY(int myPacManY){
-		this.pacManY = myPacManY;
+		this.thisY = myPacManY;
 	}
 
 	public void setUp(boolean myUp){
@@ -50,6 +50,42 @@ class PacMan {
 	public boolean getRight(){
 		return right;
 	}
-
+	
+	public void move()
+	{
+		if (this.getUp() && this.getPacManY() >=0 && this.getPacManY() <=380)
+		{
+			this.setPacManY(this.getPacManY()-2);	
+		}
+		else if (this.getDown() && this.getPacManY() >=0 && this.getPacManY() <=380)
+		{
+			this.setPacManY(this.getPacManY()+2);
+		}	
+		else if (this.getLeft() && this.getPacManX() >=0 && this.getPacManX() <=380)
+		{
+			this.setPacManX(this.getPacManX()-2);
+		}
+		else if (this.getRight() && this.getPacManX() >=0 && this.getPacManX() <=380)
+		{
+			this.setPacManX(this.getPacManX() +2);
+		}
+		
+		if (this.getPacManX() <0)
+		{
+			this.setPacManX(0);	
+		}
+		if (this.getPacManX() >380)
+		{
+			this.setPacManX(380);
+		}
+		if (this.getPacManY() < 0)
+		{
+			this.setPacManY(0);
+		}
+		if (this.getPacManY() > 380)
+		{
+			this.setPacManY(380);
+		}		
+	}
 }
 

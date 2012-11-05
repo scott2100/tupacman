@@ -53,7 +53,7 @@ class PacManPanel extends JPanel implements Runnable, KeyListener{
 		while(true)
 		{
 			repaint();
-			move();
+			pacMan.move();
 			try
 			{
 				Thread.sleep(20);
@@ -64,42 +64,7 @@ class PacManPanel extends JPanel implements Runnable, KeyListener{
 		}
 	}
 	
-	public void move()
-	{
-		if (pacMan.getUp() && pacMan.getPacManY() >=0 && pacMan.getPacManY() <=380)
-		{
-			pacMan.setPacManY(pacMan.getPacManY()-2);	
-		}
-		else if (pacMan.getDown() && pacMan.getPacManY() >=0 && pacMan.getPacManY() <=380)
-		{
-			pacMan.setPacManY(pacMan.getPacManY()+2);
-		}	
-		else if (pacMan.getLeft() && pacMan.getPacManX() >=0 && pacMan.getPacManX() <=380)
-		{
-			pacMan.setPacManX(pacMan.getPacManX()-2);
-		}
-		else if (pacMan.getRight() && pacMan.getPacManX() >=0 && pacMan.getPacManX() <=380)
-		{
-			pacMan.setPacManX(pacMan.getPacManX() +2);
-		}
-		
-		if (pacMan.getPacManX() <0)
-		{
-			pacMan.setPacManX(0);	
-		}
-		if (pacMan.getPacManX() >380)
-		{
-			pacMan.setPacManX(380);
-		}
-		if (pacMan.getPacManY() < 0)
-		{
-			pacMan.setPacManY(0);
-		}
-		if (pacMan.getPacManY() > 380)
-		{
-			pacMan.setPacManY(380);
-		}		
-	}
+	
 	
 	
 
