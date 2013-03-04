@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-class Maze extends JPanel {
+class Maze {
 	
 	private static int height = 400;
 	private static int width = 400;
@@ -48,14 +48,6 @@ class Maze extends JPanel {
 		return maze;
 	}
 	
-
-	public Maze()
-	{
-		this.setPreferredSize(new Dimension(height,width));
-		this.setFocusable(true);
-		setDoubleBuffered(true);
-
-	}
 
 }
 

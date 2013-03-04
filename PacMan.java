@@ -1,7 +1,8 @@
 class PacMan {
 
-	private static int thisX, thisY = 0;
+	private static int thisX, thisY,  positionY, positionX = 0;
 	private static boolean up, down, left, right = false;
+	private static Maze pacMaze = new Maze();
 
 	public int getPacManX(){
 		return thisX;
@@ -50,7 +51,7 @@ class PacMan {
 	public boolean getRight(){
 		return right;
 	}
-	
+
 	public void move()
 	{
 		if (this.getUp() && this.getPacManY() >=0 && this.getPacManY() <=380)
@@ -85,7 +86,23 @@ class PacMan {
 		if (this.getPacManY() > 380)
 		{
 			this.setPacManY(380);
-		}		
+		}	
+
+		this.position();	
+	}
+
+	public void position(){
+
+		//System.out.println("Pacman position Y: " + this.getPositionY());
+		//System.out.println("Pacman position X: " + this.getPositionX());
+		
+		int posx = ((this.getPacManY() + 10) / 20); 
+		int posy = ((this.getPacManX() + 10) / 20);
+
+
+		int fat = pacMaze.getMaze()[posx][posy];
+		System.out.print(fat);
+
 	}
 }
 
